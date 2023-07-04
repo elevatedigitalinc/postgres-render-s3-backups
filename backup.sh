@@ -21,7 +21,6 @@ create_bucket() {
 
     # create bucket
     s3api create-bucket \
-        --create-bucket-configuration LocationConstraint="$AWS_REGION" \
         --object-ownership BucketOwnerEnforced
 
     # block public access
