@@ -1,8 +1,8 @@
 services:
   - name: backup-db
     type: cron
-    schedule: "0 3 * * *"
-    region: oregon
+    schedule: "0 4 * * *"
+    region: ohio
     env: docker
     plan: standard
     dockerfilePath: ./Dockerfile
@@ -10,8 +10,8 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: replace-with-your-postgres-instance-name
-          property: connectionString
+          name: tcrwp-app-db
+          property: postgres://tcrwp_app_db_user:jdVHJdUCsOf964ZFhdi8yLdmcenJgvsW@dpg-cgm9r28feoo5804u0r2g-a/tcrwp_app_db
       # pick the region closest to your database
       # For example, us-west-2 for the Oregon region
       - key: AWS_REGION
